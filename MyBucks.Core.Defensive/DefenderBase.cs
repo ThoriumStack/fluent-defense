@@ -11,11 +11,15 @@ namespace MyBucks.Core.Defensive
 
         private readonly List<string> _messages = new List<string>();
 
-        public DefenderBase(string parameterName)
+        protected DefenderBase(string parameterName)
         {
             _parameterName = parameterName;
         }
 
+        /// <summary>
+        /// Throw an exception if any of the validations fail
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void Throw()
         {
             if (!_messages.Any())
@@ -41,10 +45,19 @@ namespace MyBucks.Core.Defensive
             return finalList;
         }
 
+        /// <summary>
+        /// True if no validation errors ocurred in the call chain
+        /// </summary>
         public bool IsValid => !_messages.Any();
 
+        /// <summary>
+        /// Get a list of errors
+        /// </summary>
         public List<string> Errors => GetFinalList();
 
+        /// <summary>
+        /// Get a single string newline seperated list of errors
+        /// </summary>
         public string ErrorMessage
         {
             get
