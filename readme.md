@@ -2,7 +2,7 @@
 
 # Example Code
 
-csharp```
+```csharp
 public void EnableAuthentication(string tokenBaseUrl, string clientId, string clientSecret, string appName)
         {
             _tokenBaseUrl = tokenBaseUrl;
