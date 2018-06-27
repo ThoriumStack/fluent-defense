@@ -6,12 +6,22 @@ namespace MyBucks.Core.Defensive
     public class DoubleDefender : DefenderBase
     {
         private string _parameterName;
-        private double _num;
+        private double? _num;
 
-        public DoubleDefender(double num, string parameterName) : base(parameterName)
+        public DoubleDefender(double? num, string parameterName) : base(parameterName)
         {
             _num = num;
             _parameterName = parameterName;
+        }
+        
+        public DoubleDefender NotNull()
+        {
+            if (!_num.HasValue)
+            {
+                AddError($"{_parameterName} cannot be null.");
+            }
+
+            return this;
         }
 
         public DoubleDefender NotZero()
@@ -63,7 +73,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender Custom(Func<double, bool> test, string messageTemplate)
+        public DoubleDefender Custom(Func<double?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

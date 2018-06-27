@@ -4,14 +4,17 @@
     <e p="C:\projects\mybucks\scratch\MyBucks.Core.Defensive" t="IncludeFlat">
       <e p="MyBucks.Core.Defensive" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="DateTimeDefender.cs" t="Include" />
-        <e p="DecimalDefender.cs" t="Include" />
         <e p="DefenderBase.cs" t="Include" />
+        <e p="Defenders" t="Include">
+          <e p="DateTimeDefender.cs" t="Include" />
+          <e p="DecimalDefender.cs" t="Include" />
+          <e p="DoubleDefender.cs" t="Include" />
+          <e p="FloatDefender.cs" t="Include" />
+          <e p="IntDefender.cs" t="Include" />
+          <e p="LongDefender.cs" t="Include" />
+          <e p="StringDefender.cs" t="Include" />
+        </e>
         <e p="DefensiveExtensions.cs" t="Include" />
-        <e p="DoubleDefender.cs" t="Include" />
-        <e p="FloatDefender.cs" t="Include" />
-        <e p="IntDefender.cs" t="Include" />
-        <e p="LongDefender.cs" t="Include" />
         <e p="MyBucks.Core.Defensive.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -20,7 +23,6 @@
             </e>
           </e>
         </e>
-        <e p="StringDefender.cs" t="Include" />
       </e>
       <e p="MyBucks.Core.Defensive.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

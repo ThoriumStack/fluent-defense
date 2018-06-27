@@ -24,18 +24,18 @@ namespace MyBucks.Core.Defensive
             }
 
             var finalList = GetFinalList();
-            
+
             throw new Exception(string.Join("\n", finalList));
         }
 
         private List<string> GetFinalList()
         {
-            
             var finalList = new List<string>();
             if (!_messages.Any())
             {
                 return finalList;
             }
+
             finalList.Add($"{_parameterName} is invalid.");
             finalList.AddRange(_messages);
             return finalList;
@@ -43,10 +43,21 @@ namespace MyBucks.Core.Defensive
 
         public bool IsValid => !_messages.Any();
 
-        public List<string> GetErrors()
+        public List<string> Errors => GetFinalList();
+
+        public string ErrorMessage
         {
-            var finalList = GetFinalList();
-            return finalList;
+            get
+            {
+                var finalList = GetFinalList();
+
+                if (!finalList.Any())
+                {
+                    return "";
+                }
+
+                return string.Join("\n", finalList);
+            }
         }
 
         protected void AddError(string errorMessage)

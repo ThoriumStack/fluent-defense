@@ -3,18 +3,28 @@ using System.Diagnostics;
 
 namespace MyBucks.Core.Defensive
 {
-    public class FloatDefender : DefenderBase
+    public class LongDefender : DefenderBase
     {
         private string _parameterName;
-        private float _num;
+        private long? _num;
 
-        public FloatDefender(float num, string parameterName) : base(parameterName)
+        public LongDefender(long? num, string parameterName) : base(parameterName)
         {
             _num = num;
             _parameterName = parameterName;
         }
+        
+        public LongDefender NotNull()
+        {
+            if (!_num.HasValue)
+            {
+                AddError($"{_parameterName} cannot be null.");
+            }
 
-        public FloatDefender NotZero()
+            return this;
+        }
+
+        public LongDefender NotZero()
         {
             if (_num == 0)
             {
@@ -24,7 +34,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public FloatDefender NotNegative()
+        public LongDefender NotNegative()
         {
             if (_num < 0)
             {
@@ -34,7 +44,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public FloatDefender InRange(float rangeStart, float rangeEnd)
+        public LongDefender InRange(long rangeStart, long rangeEnd)
         {
             Debug.Assert(rangeEnd > rangeStart, "rangeEnd > rangeStart");
             Min(rangeStart);
@@ -43,7 +53,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public FloatDefender Min(float minValue)
+        public LongDefender Min(long minValue)
         {
             if (_num < minValue)
             {
@@ -53,7 +63,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public FloatDefender Max(float maxValue)
+        public LongDefender Max(long maxValue)
         {
             if (_num > maxValue)
             {
@@ -63,7 +73,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public FloatDefender Custom(Func<float, bool> test, string messageTemplate)
+        public LongDefender Custom(Func<long?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

@@ -6,14 +6,24 @@ namespace MyBucks.Core.Defensive
     public class DecimalDefender : DefenderBase
     {
         private string _parameterName;
-        private decimal _num;
+        private decimal? _num;
 
-        public DecimalDefender(decimal num, string parameterName) : base(parameterName)
+        public DecimalDefender(decimal? num, string parameterName) : base(parameterName)
         {
             _num = num;
             _parameterName = parameterName;
         }
 
+        public DecimalDefender NotNull()
+        {
+            if (!_num.HasValue)
+            {
+                AddError($"{_parameterName} cannot be null.");
+            }
+
+            return this;
+        }
+        
         public DecimalDefender NotZero()
         {
             if (_num == 0)
@@ -63,7 +73,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DecimalDefender Custom(Func<decimal, bool> test, string messageTemplate)
+        public DecimalDefender Custom(Func<decimal?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

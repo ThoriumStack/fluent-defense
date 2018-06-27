@@ -14,7 +14,7 @@ namespace Tests
         [Fact]
         public void TestEmail()
         {
-            Assert.Equal(2, "12345".Defend("test").ValidEmail().GetErrors().Count);
+            Assert.Equal(2, "12345".Defend("test").ValidEmail().Errors.Count);
         }
         
         [Fact]
