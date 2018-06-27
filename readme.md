@@ -5,7 +5,7 @@ A library that makes defensive programming easier.
 ## What is defensive programming?
 
 _"Defensive programming is about protecting yourself from being hurt by something dangerous (If bad data is sent to a routine, it will not hurt the routine). By writing code that will protect yourself from bad data, unexpected events, and other programmers mistakes, will in most case reduce bugs and create a high quality software.
-Good programmers will not let bad data through. Itâ€™s important to validate input parameters to not let the garbage in. Itâ€™s also important to make sure that if garbage does come in, noting will goes out or an exception will be thrown. "_
+Good programmers will not let bad data through. It’s important to validate input parameters to not let the garbage in. It’s also important to make sure that if garbage does come in, noting will goes out or an exception will be thrown. "_
 
 https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level
 
@@ -20,8 +20,6 @@ https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contra
 public void EnableAuthentication(string tokenBaseUrl, string clientId, string clientSecret, string appName)
         {
             _tokenBaseUrl = tokenBaseUrl;
-
-            // create global validator
             
             tokenBaseUrl
                 .Defend(nameof(tokenBaseUrl))
