@@ -29,5 +29,11 @@ namespace Tests
         {
              num.Defend("test").InRange(min, max).Throw();
         }
+
+        [Fact]
+        public void TestInvalidRange()
+        {
+            Assert.Throws<Exception>(() => 5.Defend("asd").InRange(5, 4).IsValid);
+        }
     }
 }

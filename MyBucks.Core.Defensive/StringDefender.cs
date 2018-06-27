@@ -17,7 +17,7 @@ namespace MyBucks.Core.Defensive
         public StringDefender ValidUri(UriKind uriKind=UriKind.Absolute)
         {
             NotNullOrEmpty();
-            if (Uri.TryCreate(_str, uriKind, out _))
+            if (!Uri.TryCreate(_str, uriKind, out _))
             {
                 AddError($"\"{_str}\" Uri invalid.");
             }
@@ -29,16 +29,16 @@ namespace MyBucks.Core.Defensive
         {
             if (string.IsNullOrWhiteSpace(_str))
             {
-                AddError($"{_parameterName} cannot be null or empty.");
+                AddError($"{_parameterName} cannot be null or whitespace.");
             }
             return this;
         }
         
         public StringDefender NotNull()
         {
-            if (_str != null)
+            if (_str == null)
             {
-                AddError($"{_parameterName} cannot be null or empty.");
+                AddError($"{_parameterName} cannot be null.");
             }
             return this;
         }
@@ -70,7 +70,7 @@ namespace MyBucks.Core.Defensive
             }
             catch
             {
-                AddError($"{_str} is not a valid e-mail address.");
+                AddError($"\"{_str}\" is not a valid e-mail address.");
                 return this;
             }
         }
@@ -79,7 +79,7 @@ namespace MyBucks.Core.Defensive
         {
             if (!Regex.IsMatch(_str, pattern))
             {
-                AddError($"{_str} does not match required pattern \"{pattern}\"");
+                AddError($"\"{_str}\" does not match required pattern \"{pattern}\"");
             }
 
             return this;
