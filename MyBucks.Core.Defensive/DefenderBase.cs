@@ -19,16 +19,13 @@ namespace MyBucks.Core.Defensive
         /// <summary>
         /// Throw an exception if any of the validations fail
         /// </summary>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="ArgumentException"></exception>
         public void Throw()
         {
             if (!_messages.Any())
             {
                 return;
             }
-
-            var finalList = GetFinalList();
-
             throw new  ArgumentException(ErrorMessage, _parameterName);
         }
 
