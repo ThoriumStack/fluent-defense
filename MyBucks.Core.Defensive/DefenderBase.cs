@@ -29,7 +29,7 @@ namespace MyBucks.Core.Defensive
 
             var finalList = GetFinalList();
 
-            throw new Exception(string.Join("\n", finalList));
+            throw new  ArgumentException(ErrorMessage, _parameterName);
         }
 
         private List<string> GetFinalList()
