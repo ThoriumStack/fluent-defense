@@ -43,7 +43,7 @@ namespace MyBucks.Core.Defensive
         }
 
         /// <summary>
-        /// True if no validation errors ocurred in the call chain
+        /// True if no validation errors occurred in the call chain
         /// </summary>
         public bool IsValid => !_messages.Any();
 
@@ -53,7 +53,7 @@ namespace MyBucks.Core.Defensive
         public List<string> Errors => GetFinalList();
 
         /// <summary>
-        /// Get a single string newline seperated list of errors
+        /// Get a single string newline separated list of errors
         /// </summary>
         public string ErrorMessage
         {

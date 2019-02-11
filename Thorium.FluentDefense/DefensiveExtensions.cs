@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
     public static class DefensiveExtensions
     {

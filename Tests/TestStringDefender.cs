@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using MyBucks.Core.Defensive;
+using Thorium.FluentDefense;
 
 namespace Tests
 {

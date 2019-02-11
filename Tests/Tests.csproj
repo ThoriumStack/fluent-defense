@@ -10,6 +10,6 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyBucks.Core.Defensive\MyBucks.Core.Defensive.csproj" />
+    <ProjectReference Include="..\Thorium.FluentDefense\Thorium.FluentDefense.csproj" />
   </ItemGroup>
 </Project>

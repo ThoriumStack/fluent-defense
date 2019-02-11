@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using MyBucks.Core.Defensive;
+using Thorium.FluentDefense;
 using Xunit.Sdk;
 
 namespace Tests

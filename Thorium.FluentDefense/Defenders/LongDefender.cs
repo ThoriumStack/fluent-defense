@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Diagnostics;
+using MyBucks.Core.Defensive;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
-    public class IntDefender : DefenderBase
+    public class LongDefender : DefenderBase
     {
         private string _parameterName;
-        private int? _num;
+        private long? _num;
 
-        public IntDefender(int? num, string parameterName) : base(parameterName)
+        public LongDefender(long? num, string parameterName) : base(parameterName)
         {
-            
-            
             _num = num;
             _parameterName = parameterName;
         }
-
-        public IntDefender NotNull()
+        
+        public LongDefender NotNull()
         {
             if (!_num.HasValue)
             {
@@ -26,7 +25,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public IntDefender NotZero()
+        public LongDefender NotZero()
         {
             if (_num == 0)
             {
@@ -36,7 +35,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public IntDefender NotNegative()
+        public LongDefender NotNegative()
         {
             if (_num < 0)
             {
@@ -46,17 +45,16 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public IntDefender InRange(int rangeStart, int rangeEnd)
+        public LongDefender InRange(long rangeStart, long rangeEnd)
         {
             Debug.Assert(rangeEnd > rangeStart, "rangeEnd > rangeStart");
-            
             Min(rangeStart);
             Max(rangeEnd);
 
             return this;
         }
 
-        public IntDefender Min(int minValue)
+        public LongDefender Min(long minValue)
         {
             if (_num < minValue)
             {
@@ -66,7 +64,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public IntDefender Max(int maxValue)
+        public LongDefender Max(long maxValue)
         {
             if (_num > maxValue)
             {
@@ -76,7 +74,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public IntDefender Custom(Func<int?, bool> test, string messageTemplate)
+        public LongDefender Custom(Func<long?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

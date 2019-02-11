@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Diagnostics;
+using MyBucks.Core.Defensive;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
-    public class LongDefender : DefenderBase
+    public class DecimalDefender : DefenderBase
     {
         private string _parameterName;
-        private long? _num;
+        private decimal? _num;
 
-        public LongDefender(long? num, string parameterName) : base(parameterName)
+        public DecimalDefender(decimal? num, string parameterName) : base(parameterName)
         {
             _num = num;
             _parameterName = parameterName;
         }
-        
-        public LongDefender NotNull()
+
+        public DecimalDefender NotNull()
         {
             if (!_num.HasValue)
             {
@@ -23,8 +24,8 @@ namespace MyBucks.Core.Defensive
 
             return this;
         }
-
-        public LongDefender NotZero()
+        
+        public DecimalDefender NotZero()
         {
             if (_num == 0)
             {
@@ -34,7 +35,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public LongDefender NotNegative()
+        public DecimalDefender NotNegative()
         {
             if (_num < 0)
             {
@@ -44,7 +45,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public LongDefender InRange(long rangeStart, long rangeEnd)
+        public DecimalDefender InRange(decimal rangeStart, decimal rangeEnd)
         {
             Debug.Assert(rangeEnd > rangeStart, "rangeEnd > rangeStart");
             Min(rangeStart);
@@ -53,7 +54,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public LongDefender Min(long minValue)
+        public DecimalDefender Min(decimal minValue)
         {
             if (_num < minValue)
             {
@@ -63,7 +64,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public LongDefender Max(long maxValue)
+        public DecimalDefender Max(decimal maxValue)
         {
             if (_num > maxValue)
             {
@@ -73,7 +74,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public LongDefender Custom(Func<long?, bool> test, string messageTemplate)
+        public DecimalDefender Custom(Func<decimal?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

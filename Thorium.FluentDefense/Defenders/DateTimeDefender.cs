@@ -1,6 +1,7 @@
 ﻿using System;
+using MyBucks.Core.Defensive;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
     public class DateTimeDefender : DefenderBase
     {
@@ -36,6 +37,28 @@ namespace MyBucks.Core.Defensive
         {
             NotNull();
             if (_value == null || _value.Value >= DateTime.Now)
+            {
+                AddError($"{_value} is not a future date.");
+            }
+
+            return this;
+        }
+        
+        public DateTimeDefender IsInFutureUtc()
+        {
+            NotNull();
+            if (_value == null || _value.Value <= DateTime.UtcNow)
+            {
+                AddError($"{_value} is not a future date.");
+            }
+
+            return this;
+        }
+        
+        public DateTimeDefender IsInPastUtc()
+        {
+            NotNull();
+            if (_value == null || _value.Value >= DateTime.UtcNow)
             {
                 AddError($"{_value} is not a future date.");
             }

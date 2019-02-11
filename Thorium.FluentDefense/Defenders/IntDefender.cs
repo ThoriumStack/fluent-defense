@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Diagnostics;
+using MyBucks.Core.Defensive;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
-    public class DoubleDefender : DefenderBase
+    public class IntDefender : DefenderBase
     {
         private string _parameterName;
-        private double? _num;
+        private int? _num;
 
-        public DoubleDefender(double? num, string parameterName) : base(parameterName)
+        public IntDefender(int? num, string parameterName) : base(parameterName)
         {
+            
+            
             _num = num;
             _parameterName = parameterName;
         }
-        
-        public DoubleDefender NotNull()
+
+        public IntDefender NotNull()
         {
             if (!_num.HasValue)
             {
@@ -24,7 +27,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender NotZero()
+        public IntDefender NotZero()
         {
             if (_num == 0)
             {
@@ -34,7 +37,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender NotNegative()
+        public IntDefender NotNegative()
         {
             if (_num < 0)
             {
@@ -44,16 +47,17 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender InRange(double rangeStart, double rangeEnd)
+        public IntDefender InRange(int rangeStart, int rangeEnd)
         {
             Debug.Assert(rangeEnd > rangeStart, "rangeEnd > rangeStart");
+            
             Min(rangeStart);
             Max(rangeEnd);
 
             return this;
         }
 
-        public DoubleDefender Min(double minValue)
+        public IntDefender Min(int minValue)
         {
             if (_num < minValue)
             {
@@ -63,7 +67,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender Max(double maxValue)
+        public IntDefender Max(int maxValue)
         {
             if (_num > maxValue)
             {
@@ -73,7 +77,7 @@ namespace MyBucks.Core.Defensive
             return this;
         }
 
-        public DoubleDefender Custom(Func<double?, bool> test, string messageTemplate)
+        public IntDefender Custom(Func<int?, bool> test, string messageTemplate)
         {
             Debug.Assert(test != null, nameof(test) + " != null");
             if (!test.Invoke(_num))

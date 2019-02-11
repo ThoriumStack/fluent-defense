@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using MyBucks.Core.Defensive;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
     public class FloatDefender : DefenderBase
     {

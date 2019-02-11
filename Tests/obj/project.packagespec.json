@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\projects\\mybucks\\scratch\\MyBucks.Core.Defensive\\Tests\\Tests.csproj",
+    "projectUniqueName": "/home/tjaart/projects/lib/thorium/core-defensive/Tests/Tests.csproj",
     "projectName": "Tests",
-    "projectPath": "C:\\projects\\mybucks\\scratch\\MyBucks.Core.Defensive\\Tests\\Tests.csproj",
-    "outputPath": "C:\\projects\\mybucks\\scratch\\MyBucks.Core.Defensive\\Tests\\obj\\",
+    "projectPath": "/home/tjaart/projects/lib/thorium/core-defensive/Tests/Tests.csproj",
+    "outputPath": "/home/tjaart/projects/lib/thorium/core-defensive/Tests/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.1"
@@ -15,8 +15,8 @@
     "frameworks": {
       "netcoreapp2.1": {
         "projectReferences": {
-          "C:\\projects\\mybucks\\scratch\\MyBucks.Core.Defensive\\MyBucks.Core.Defensive\\MyBucks.Core.Defensive.csproj": {
-            "projectPath": "C:\\projects\\mybucks\\scratch\\MyBucks.Core.Defensive\\MyBucks.Core.Defensive\\MyBucks.Core.Defensive.csproj"
+          "/home/tjaart/projects/lib/thorium/core-defensive/Thorium.FluentDefense/Thorium.FluentDefense.csproj": {
+            "projectPath": "/home/tjaart/projects/lib/thorium/core-defensive/Thorium.FluentDefense/Thorium.FluentDefense.csproj"
           }
         }
       }
