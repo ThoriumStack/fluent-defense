@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A library that makes defensive programming easier.</description>
         <releaseNotes>Initial release.</releaseNotes>
-        <copyright>Copyright 2014</copyright>
+        <copyright>Copyright 2019</copyright>
         <tags>defensive-programming</tags>
     </metadata>
 </package>
