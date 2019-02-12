@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
-        <version>$version$</version>
+        <version>$(appveyor_build_version)</version>
         <id>Thorium.FluentDefense</id>
         <authors>Thorium Dev Team</authors>
         <owners>Thorium Dev Team</owners>
