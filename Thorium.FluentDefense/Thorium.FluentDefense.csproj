@@ -11,7 +11,7 @@
     <Description>Fluent Defensive Programming</Description>
     <Copyright>Copyright</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/ThoriumStack/fluent-defense/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/ThoriumStack/fluent-defenseL</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ThoriumStack/fluent-defense</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ThoriumStack/fluent-defense</RepositoryUrl>
     <PackageTags>defensive-programming</PackageTags>
     <PackageReleaseNotes>Release</PackageReleaseNotes>
