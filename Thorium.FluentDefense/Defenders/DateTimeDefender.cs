@@ -69,7 +69,7 @@ namespace Thorium.FluentDefense
         public DateTimeDefender NotDefault()
         {
             NotNull();
-            if (_value == null || _value.Value != default(DateTime))
+            if (_value == null || _value.Value == default(DateTime))
             {
                 AddError($"{_value} was never initialized.");
             }
