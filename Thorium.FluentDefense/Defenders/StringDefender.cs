@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using MyBucks.Core.Defensive;
 
-namespace Thorium.FluentDefense
+namespace Thorium.FluentDefense.Defenders
 {
     public class StringDefender : DefenderBase
     {

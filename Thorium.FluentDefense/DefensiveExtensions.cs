@@ -1,4 +1,5 @@
 ﻿using System;
+using Thorium.FluentDefense.Defenders;
 
 namespace Thorium.FluentDefense
 {

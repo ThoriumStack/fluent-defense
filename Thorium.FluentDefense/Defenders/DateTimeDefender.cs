@@ -1,7 +1,6 @@
 ﻿using System;
-using MyBucks.Core.Defensive;
 
-namespace Thorium.FluentDefense
+namespace Thorium.FluentDefense.Defenders
 {
     public class DateTimeDefender : DefenderBase
     {

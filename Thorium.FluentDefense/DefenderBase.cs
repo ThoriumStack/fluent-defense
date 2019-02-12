@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
-namespace MyBucks.Core.Defensive
+namespace Thorium.FluentDefense
 {
     public abstract class DefenderBase
     {

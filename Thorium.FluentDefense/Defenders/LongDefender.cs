@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using MyBucks.Core.Defensive;
 
-namespace Thorium.FluentDefense
+namespace Thorium.FluentDefense.Defenders
 {
     public class LongDefender : DefenderBase
     {
