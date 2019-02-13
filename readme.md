@@ -11,7 +11,7 @@ https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contra
 
 ## Getting Started
 
-1. Install the Thorium.FluentDefense package from the (There is no package build currently)
+1. Install the Thorium.FluentDefense package https://www.nuget.org/packages/Thorium.FluentDefense
 2. Include the using statement for the defensive extensions: `using Thorium.FluentDefense`
 
 ## Example Code
