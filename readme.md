@@ -1,3 +1,5 @@
+# NOTE: Superseded by https://github.com/tjaart/fluent-defense
+
 # Thorium Defensive Extensions
 
 A library that makes defensive programming easier. 
